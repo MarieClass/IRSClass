@@ -1,0 +1,13 @@
+name: PR Ticket Lint
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  pr_lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint PR for ticket reference
+        uses: vijaykramesh/pr-lint-action@v2.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
